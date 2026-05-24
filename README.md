@@ -132,56 +132,23 @@ I navigated to the **Notification** tab to review the email alert configuration.
 
 ## Phase 3 — Eligible Assignment Creation
 
-### Step 8 — Searched for First Member to Assign
-
-I returned to Global Administrator Assignments and clicked **+ Add assignments**. On the **Membership** tab, I clicked **Select member(s)** and searched for `UCHE` in the member search panel. From the 5 results returned, I selected **Uche Mike-Olisa** (`Uche@tenantname`) as the first eligible assignee and clicked **Select**.
-
-![Step 8 - Search and Select First Member](screenshots/2026-05-23_21-21.png)
-
----
-
-### Step 9 — Confirmed First Member Selection
-
-The Membership tab confirmed **Uche Mike-Olisa** as the selected member, with the role set to **Global Administrator** and scope type set to **Directory**. The panel showed 1 Member(s) selected. I clicked **Next** to proceed to the Setting tab.
-
-![Step 9 - First Member Confirmed](screenshots/2026-05-23_21-22.png)
-
----
-
-### Step 10 — Set Time-Bound Eligible Assignment for First Member
-
-On the **Setting** tab, I configured a time-bound eligible assignment for Uche Mike-Olisa:
-
-| Setting | Value |
-|---|---|
-| Assignment type | **Eligible** |
-| Permanently eligible | ❌ Unchecked |
-| Assignment starts | 05/25/2026, 10:00:00 AM |
-| Assignment ends | 05/25/2026, 2:00:00 PM |
-
-This gave Uche a 4-hour eligibility window — just enough to perform the required task — after which the eligibility would expire automatically. I clicked **Assign** to complete the assignment.
-
-![Step 10 - Time-Bound Setting for First Member](screenshots/2026-05-23_21-36.png)
-
----
-
-### Step 11 — Searched for Second Member to Assign
+### Step 8 — Searched for Second Member to Assign
 
 I clicked **+ Add assignments** again and searched for `KATE` in the member search panel. The search returned 1 result — **kate ALL** (`Kateall@tenantname`) — who was the same test user from the MFA Conditional Access lab. I selected her as the second eligible assignee and clicked **Select**.
 
-![Step 11 - Search and Select Second Member](screenshots/2026-05-23_21-48.png)
+![Step 8 - Search and Select Second Member](screenshots/2026-05-23_21-48.png)
 
 ---
 
-### Step 12 — Confirmed Second Member Selection
+### Step 9 — Confirmed Second Member Selection
 
 The Membership tab confirmed **kate ALL** as the selected member for the Global Administrator eligible assignment. I clicked **Next** to proceed to the Setting tab.
 
-![Step 12 - Second Member Confirmed](screenshots/2026-05-23_21-49.png)
+![Step 9 - Second Member Confirmed](screenshots/2026-05-23_21-49.png)
 
 ---
 
-### Step 13 — Set Time-Bound Eligible Assignment for Second Member
+### Step 10 — Set Time-Bound Eligible Assignment for Second Member
 
 On the **Setting** tab, I configured a time-bound eligible assignment for kate ALL:
 
@@ -194,11 +161,11 @@ On the **Setting** tab, I configured a time-bound eligible assignment for kate A
 
 I clicked **Assign** to complete the assignment.
 
-![Step 13 - Time-Bound Setting for Second Member](screenshots/2026-05-23_22-06.png)
+![Step 10 - Time-Bound Setting for Second Member](screenshots/2026-05-23_22-06.png)
 
 ---
 
-### Step 14 — Verified Final Eligible Assignments
+### Step 11 — Verified Final Eligible Assignments
 
 The **Global Administrator Assignments** dashboard now showed **3 eligible assignments** in total:
 
@@ -210,53 +177,53 @@ The **Global Administrator Assignments** dashboard now showed **3 eligible assig
 
 Kate ALL's time-bound eligible assignment was confirmed and active. Phase 3 was complete.
 
-![Step 14 - Final Assignments Confirmed](screenshots/2026-05-23_22-09.png)
+![Step 11 - Final Assignments Confirmed](screenshots/2026-05-23_22-09.png)
 
 ---
 
 ## Phase 4 — End-User Activation & Admin Approval
 
-### Step 15 — Signed In as the Test User
+### Step 12 — Signed In as the Test User
 
 I opened a new browser session and navigated to the Microsoft sign-in page. The **Pick an account** screen appeared with `Kateall@tenantname` as a cached account. I selected it to sign in as the test user and verify the JIT activation flow from the end-user perspective.
 
-![Step 15 - Pick Account](screenshots/2026-05-23_21-56.png)
+![Step 12 - Pick Account](screenshots/2026-05-23_21-56.png)
 
 ---
 
-### Step 16 — Completed MFA Sign-In
+### Step 13 — Completed MFA Sign-In
 
 The sign-in flow triggered an **Approve sign in request** challenge, displaying the number **22**. I opened the Microsoft Authenticator app on the mobile device and entered the number to approve the request, confirming the MFA requirement was working correctly for the test user account.
 
-![Step 16 - MFA Number Match](screenshots/2026-05-23_21-58.png)
+![Step 13 - MFA Number Match](screenshots/2026-05-23_21-58.png)
 
 ---
 
-### Step 17 — Confirmed Test User Has No Active Roles
+### Step 14 — Confirmed Test User Has No Active Roles
 
 After signing in as kate ALL, I arrived at the **Microsoft Entra home** dashboard. The profile panel confirmed **kate ALL — No roles assigned**, verifying that the eligible assignment alone does not grant access — the user must explicitly request and receive approval for role activation. The tenant showed Entra ID Premium P2 licensing, confirming PIM was available.
 
-![Step 17 - No Roles Assigned](screenshots/2026-05-23_21-59.png)
+![Step 14 - No Roles Assigned](screenshots/2026-05-23_21-59.png)
 
 ---
 
-### Step 18 — Navigated to PIM as Test User
+### Step 15 — Navigated to PIM as Test User
 
 Still signed in as kate ALL, I navigated to **Privileged Identity Management > Quick start**. The PIM interface was now showing from the end-user perspective, with the same three options visible — the key difference being that kate ALL can only request activation, not manage assignments.
 
-![Step 18 - PIM Quick Start as Test User](screenshots/2026-05-23_22-00.png)
+![Step 15 - PIM Quick Start as Test User](screenshots/2026-05-23_22-00.png)
 
 ---
 
-### Step 19 — Viewed Eligible Assignment in My Roles
+### Step 16 — Viewed Eligible Assignment in My Roles
 
 I clicked **My roles > Microsoft Entra roles** and confirmed the **Eligible assignments** tab showed **Global Administrator** as an eligible role, with a scope of the tenant directory, end time of 8/23/2026, and an **Activate** button. This confirmed kate ALL could see her eligible assignment and was ready to request activation.
 
-![Step 19 - My Roles Eligible](screenshots/2026-05-23_22-12.png)
+![Step 16 - My Roles Eligible](screenshots/2026-05-23_22-12.png)
 
 ---
 
-### Step 20 — Submitted Role Activation Request
+### Step 17 — Submitted Role Activation Request
 
 I clicked **Activate** next to the Global Administrator role. The **Activate - Global Administrator** panel opened on the right. I configured:
 
@@ -267,19 +234,19 @@ I clicked **Activate** next to the Global Administrator role. The **Activate - G
 
 I clicked **Activate** to submit the request. Since approval was required, the request was sent to the configured approvers rather than activating immediately.
 
-![Step 20 - Submit Activation Request](screenshots/2026-05-23_22-01.png)
+![Step 17 - Submit Activation Request](screenshots/2026-05-23_22-01.png)
 
 ---
 
-### Step 21 — Request Confirmed as Pending Approval
+### Step 18 — Request Confirmed as Pending Approval
 
 After submitting, the My roles page displayed a notification banner: **"Your request is pending for approval"** — Scope: @tenantname Member: kate ALL, Role: Global Administrator. This confirmed the request had been submitted and was awaiting approval from one of the 6 designated approvers.
 
-![Step 21 - Pending Approval Notification](screenshots/2026-05-23_22-13.png)
+![Step 18 - Pending Approval Notification](screenshots/2026-05-23_22-13.png)
 
 ---
 
-### Step 22 — Admin Viewed the Incoming Request
+### Step 19 — Admin Viewed the Incoming Request
 
 I switched back to the admin session (Kingsley). I navigated to **PIM > Approve requests > Microsoft Entra roles**. The **Requests for role activations** section showed kate ALL's pending request:
 
@@ -292,11 +259,11 @@ I switched back to the admin session (Kingsley). I navigated to **PIM > Approve 
 
 I checked the checkbox next to the request to select it for review.
 
-![Step 22 - Admin Views Pending Request](screenshots/2026-05-23_22-13_1.png)
+![Step 19 - Admin Views Pending Request](screenshots/2026-05-23_22-13_1.png)
 
 ---
 
-### Step 23 — Admin Reviewed and Approved the Request
+### Step 20 — Admin Reviewed and Approved the Request
 
 The **Approve Request** panel opened on the right, showing full details of the request including the requestor's justification. I reviewed the request details and entered the approval justification:
 
@@ -304,21 +271,21 @@ The **Approve Request** panel opened on the right, showing full details of the r
 
 I clicked **Confirm** to approve the request.
 
-![Step 23 - Admin Approves Request](screenshots/2026-05-23_22-14.png)
+![Step 20 - Admin Approves Request](screenshots/2026-05-23_22-14.png)
 
 ---
 
-### Step 24 — ✅ Approval Confirmed
+### Step 21 — ✅ Approval Confirmed
 
 The approval was processed immediately. A green success banner appeared at the top right: **"Update request status — kate ALL is approved."** The Requests for role activations table cleared to "No requests pending approval," confirming the activation had been granted. Phase 4 was complete.
 
-![Step 24 - Approval Confirmed](screenshots/2026-05-23_22-14_1.png)
+![Step 21 - Approval Confirmed](screenshots/2026-05-23_22-14_1.png)
 
 ---
 
 ## Phase 5 — Verification & Audit
 
-### Step 25 — ✅ Verified Role is Now Active for Test User
+### Step 22 — ✅ Verified Role is Now Active for Test User
 
 I switched back to the kate ALL browser session and refreshed the My roles page. Under **Active assignments**, the **Global Administrator** role now appeared with:
 
@@ -331,11 +298,11 @@ I switched back to the kate ALL browser session and refreshed the My roles page.
 
 This confirmed the JIT activation flow worked end-to-end — kate ALL now had temporary Global Administrator access that would automatically expire at 12:14 AM, a 2-hour window from activation.
 
-![Step 25 - Role Activated](screenshots/2026-05-23_22-17.png)
+![Step 22 - Role Activated](screenshots/2026-05-23_22-17.png)
 
 ---
 
-### Step 26 — Reviewed the Full PIM Audit History
+### Step 23 — Reviewed the Full PIM Audit History
 
 I navigated to **PIM > My audit history** to review the complete activity log. The audit trail captured every action in chronological order, including:
 
@@ -347,11 +314,11 @@ I navigated to **PIM > My audit history** to review the complete activity log. T
 
 This audit trail provides full accountability and is critical for compliance reporting and security investigations.
 
-![Step 26 - Audit History](screenshots/2026-05-23_22-31.png)
+![Step 23 - Audit History](screenshots/2026-05-23_22-31.png)
 
 ---
 
-### Step 27 — Reviewed PIM Security Alerts
+### Step 24 — Reviewed PIM Security Alerts
 
 I navigated to **PIM > Alerts** to review the security alert dashboard. Four active alerts were displayed with their risk levels:
 
@@ -364,15 +331,15 @@ I navigated to **PIM > Alerts** to review the security alert dashboard. Four act
 
 The **High** alert showing 109 roles assigned outside of PIM indicated a significant governance gap in the tenant — roles being assigned via Entra ID directly rather than through PIM, bypassing all JIT controls. This is a key finding that would require remediation in a production environment.
 
-![Step 27 - PIM Security Alerts](screenshots/2026-05-23_22-46.png)
+![Step 24 - PIM Security Alerts](screenshots/2026-05-23_22-46.png)
 
 ---
 
-### Step 28 — Reviewed My Audit Log with Status
+### Step 25 — Reviewed My Audit Log with Status
 
 I navigated to **My audit** to view the complete audit log with status indicators for the last day. The log confirmed all PIM actions completed with green ✅ status, with one notable exception — the Uche Mike-Olisa eligible assignment showing ❌ (the time-bound request for 05/25 had not yet activated as it was scheduled for a future date). All other operations — role setting updates, kate ALL's eligibility, activation request, approval, and alert activations — were confirmed as successful.
 
-![Step 28 - My Audit Log](screenshots/2026-05-23_22-49.png)
+![Step 25 - My Audit Log](screenshots/2026-05-23_22-49.png)
 
 ---
 
