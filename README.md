@@ -246,7 +246,39 @@ After submitting, the My roles page displayed a notification banner: **"Your req
 
 ---
 
-### Step 19 — Admin Viewed the Incoming Request
+### Step 19 — Admin Received Email Notification to Approve
+
+While kate ALL's request was pending, Microsoft Security automatically sent an email to the designated approver (Kingsley) in Outlook. The email — subject **"PIM: Review kate ALL's request to activate the Global Administrator role"** — contained full request details and an **Approve or deny request** button linking directly to the PIM portal:
+
+| Field | Value |
+|---|---|
+| User | kate ALL |
+| Resource type | Directory |
+| Role name | Global Administrator |
+| Reason | Temporary admin access required for Microsoft Entra administration testing |
+| Start Time | 2026-05-24 02:11:46Z |
+
+This is a critical enterprise control — approvers don't need to be monitoring the PIM portal; the system proactively notifies them the moment a request is submitted, enabling a fast and auditable approval response.
+
+![Step 19 - Approval Request Email in Outlook](screenshots/2026-05-24_13-43.png)
+
+---
+
+### Step 20 — Admin Received Approval Confirmation Email
+
+After Kingsley approved the request in the portal, Microsoft Security automatically sent a second email confirming the outcome — subject **"PIM: The request from kate ALL to activate the Global Administrator role was approved"**. The email confirmed:
+
+| Field | Value |
+|---|---|
+| Reviewed by | Kingsley |
+
+This closure notification ensures the approver has a permanent record of the decision in their mailbox, supporting audit trail requirements and giving both the approver and requestor full visibility of the outcome without needing to revisit the portal.
+
+![Step 20 - Approval Confirmation Email in Outlook](screenshots/2026-05-24_13-44.png)
+
+---
+
+### Step 21 — Admin Viewed the Incoming Request
 
 I switched back to the admin session (Kingsley). I navigated to **PIM > Approve requests > Microsoft Entra roles**. The **Requests for role activations** section showed kate ALL's pending request:
 
@@ -259,11 +291,11 @@ I switched back to the admin session (Kingsley). I navigated to **PIM > Approve 
 
 I checked the checkbox next to the request to select it for review.
 
-![Step 19 - Admin Views Pending Request](screenshots/2026-05-23_22-13_1.png)
+![Step 21 - Admin Views Pending Request](screenshots/2026-05-23_22-13_1.png)
 
 ---
 
-### Step 20 — Admin Reviewed and Approved the Request
+### Step 22 — Admin Reviewed and Approved the Request
 
 The **Approve Request** panel opened on the right, showing full details of the request including the requestor's justification. I reviewed the request details and entered the approval justification:
 
@@ -271,21 +303,21 @@ The **Approve Request** panel opened on the right, showing full details of the r
 
 I clicked **Confirm** to approve the request.
 
-![Step 20 - Admin Approves Request](screenshots/2026-05-23_22-14.png)
+![Step 22 - Admin Approves Request](screenshots/2026-05-23_22-14.png)
 
 ---
 
-### Step 21 — ✅ Approval Confirmed
+### Step 23 — ✅ Approval Confirmed
 
 The approval was processed immediately. A green success banner appeared at the top right: **"Update request status — kate ALL is approved."** The Requests for role activations table cleared to "No requests pending approval," confirming the activation had been granted. Phase 4 was complete.
 
-![Step 21 - Approval Confirmed](screenshots/2026-05-23_22-14_1.png)
+![Step 23 - Approval Confirmed](screenshots/2026-05-23_22-14_1.png)
 
 ---
 
 ## Phase 5 — Verification & Audit
 
-### Step 22 — ✅ Verified Role is Now Active for Test User
+### Step 24 — ✅ Verified Role is Now Active for Test User
 
 I switched back to the kate ALL browser session and refreshed the My roles page. Under **Active assignments**, the **Global Administrator** role now appeared with:
 
@@ -298,11 +330,11 @@ I switched back to the kate ALL browser session and refreshed the My roles page.
 
 This confirmed the JIT activation flow worked end-to-end — kate ALL now had temporary Global Administrator access that would automatically expire at 12:14 AM, a 2-hour window from activation.
 
-![Step 22 - Role Activated](screenshots/2026-05-23_22-17.png)
+![Step 24 - Role Activated](screenshots/2026-05-23_22-17.png)
 
 ---
 
-### Step 23 — Reviewed the Full PIM Audit History
+### Step 25 — Reviewed the Full PIM Audit History
 
 I navigated to **PIM > My audit history** to review the complete activity log. The audit trail captured every action in chronological order, including:
 
@@ -313,11 +345,11 @@ I navigated to **PIM > My audit history** to review the complete activity log. T
 
 This audit trail provides full accountability and is critical for compliance reporting and security investigations.
 
-![Step 23 - Audit History](screenshots/2026-05-23_22-31.png)
+![Step 25 - Audit History](screenshots/2026-05-23_22-31.png)
 
 ---
 
-### Step 24 — Reviewed PIM Security Alerts
+### Step 26 — Reviewed PIM Security Alerts
 
 I navigated to **PIM > Alerts** to review the security alert dashboard. Four active alerts were displayed with their risk levels:
 
@@ -330,15 +362,15 @@ I navigated to **PIM > Alerts** to review the security alert dashboard. Four act
 
 The **High** alert showing 109 roles assigned outside of PIM indicated a significant governance gap in the tenant — roles being assigned via Entra ID directly rather than through PIM, bypassing all JIT controls. This is a key finding that would require remediation in a production environment.
 
-![Step 24 - PIM Security Alerts](screenshots/2026-05-23_22-46.png)
+![Step 26 - PIM Security Alerts](screenshots/2026-05-23_22-46.png)
 
 ---
 
-### Step 25 — Reviewed My Audit Log with Status
+### Step 27 — Reviewed My Audit Log with Status
 
-I navigated to **My audit** to view the complete audit log with status indicators for the last day. The log confirmed all PIM actions completed with green ✅ status, with one notable exception — the Uche Mike-Olisa eligible assignment showing ❌ (the time-bound request for 05/25 had not yet activated as it was scheduled for a future date). All other operations — role setting updates, kate ALL's eligibility, activation request, approval, and alert activations — were confirmed as successful.
+I navigated to **My audit** to view the complete audit log with status indicators for the last day. The log confirmed all PIM actions completed with green ✅ status, with one notable exception — a user named Uche had a scheduled eligible assignment showing ❌ (the time-bound request had not yet activated as it was set for a future date). All other operations — role setting updates, kate ALL's eligibility, activation request, approval, and alert activations — were confirmed as successful.
 
-![Step 25 - My Audit Log](screenshots/2026-05-23_22-49.png)
+![Step 27 - My Audit Log](screenshots/2026-05-23_22-49.png)
 
 ---
 
