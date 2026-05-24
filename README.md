@@ -24,7 +24,7 @@ The risks of standing privilege are severe:
 
 ## 📋 Overview
 
-In this lab, I configured **Privileged Identity Management (PIM)** in Microsoft Entra ID to implement Just-In-Time access control for the **Global Administrator** role. The lab covers four phases:
+In this lab, I configured **Privileged Identity Management (PIM)** in Microsoft Entra ID to implement Just-In-Time access control for the **Global Administrator** role. The lab covers five phases:
 
 1. **PIM Setup & Navigation** — Exploring the PIM interface and understanding the existing role state
 2. **Role Settings Configuration** — Defining activation rules, expiry policies, MFA requirements, approval workflows, and notification settings
@@ -132,15 +132,15 @@ I navigated to the **Notification** tab to review the email alert configuration.
 
 ## Phase 3 — Eligible Assignment Creation
 
-### Step 8 — Searched for Second Member to Assign
+### Step 8 — Searched for Member to Assign
 
-I clicked **+ Add assignments** again and searched for `KATE` in the member search panel. The search returned 1 result — **kate ALL** (`Kateall@tenantname`) — who was the same test user from the MFA Conditional Access lab. I selected her as the second eligible assignee and clicked **Select**.
+I clicked **+ Add assignments** and searched for `KATE` in the member search panel. The search returned 1 result — **kate ALL** (`Kateall@tenantname`) — who was the same test user from the MFA Conditional Access lab. I selected her as the eligible assignee and clicked **Select**.
 
-![Step 8 - Search and Select Second Member](screenshots/2026-05-23_21-48.png)
+![Step 8 - Search and Select Member](screenshots/2026-05-23_21-48.png)
 
 ---
 
-### Step 9 — Confirmed Second Member Selection
+### Step 9 — Confirmed Member Selection
 
 The Membership tab confirmed **kate ALL** as the selected member for the Global Administrator eligible assignment. I clicked **Next** to proceed to the Setting tab.
 
@@ -148,7 +148,7 @@ The Membership tab confirmed **kate ALL** as the selected member for the Global 
 
 ---
 
-### Step 10 — Set Time-Bound Eligible Assignment for Second Member
+### Step 10 — Set Time-Bound Eligible Assignment
 
 On the **Setting** tab, I configured a time-bound eligible assignment for kate ALL:
 
@@ -161,7 +161,7 @@ On the **Setting** tab, I configured a time-bound eligible assignment for kate A
 
 I clicked **Assign** to complete the assignment.
 
-![Step 10 - Time-Bound Setting for Second Member](screenshots/2026-05-23_22-06.png)
+![Step 10 - Time-Bound Setting](screenshots/2026-05-23_22-06.png)
 
 ---
 
@@ -306,11 +306,10 @@ This confirmed the JIT activation flow worked end-to-end — kate ALL now had te
 
 I navigated to **PIM > My audit history** to review the complete activity log. The audit trail captured every action in chronological order, including:
 
-- Role setting updates by Kingsley
+- Role setting updates
 - Eligible member added for kate ALL (time-bound)
-- Member added to role request approved (PIM activation) by Kingsley
+- Member added to role request approved (PIM activation)
 - Add member to role completed (PIM activation) by kate ALL
-- Uche Mike-Olisa eligible assignment requested
 
 This audit trail provides full accountability and is critical for compliance reporting and security investigations.
 
