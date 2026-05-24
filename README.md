@@ -264,21 +264,7 @@ This is a critical enterprise control — approvers don't need to be monitoring 
 
 ---
 
-### Step 20 — Admin Received Approval Confirmation Email
-
-After Kingsley approved the request in the portal, Microsoft Security automatically sent a second email confirming the outcome — subject **"PIM: The request from kate ALL to activate the Global Administrator role was approved"**. The email confirmed:
-
-| Field | Value |
-|---|---|
-| Reviewed by | Kingsley |
-
-This closure notification ensures the approver has a permanent record of the decision in their mailbox, supporting audit trail requirements and giving both the approver and requestor full visibility of the outcome without needing to revisit the portal.
-
-![Step 20 - Approval Confirmation Email in Outlook](screenshots/2026-05-24_13-44.png)
-
----
-
-### Step 21 — Admin Viewed the Incoming Request
+### Step 20 — Admin Viewed the Incoming Request
 
 I switched back to the admin session (Kingsley). I navigated to **PIM > Approve requests > Microsoft Entra roles**. The **Requests for role activations** section showed kate ALL's pending request:
 
@@ -291,11 +277,11 @@ I switched back to the admin session (Kingsley). I navigated to **PIM > Approve 
 
 I checked the checkbox next to the request to select it for review.
 
-![Step 21 - Admin Views Pending Request](screenshots/2026-05-23_22-13_1.png)
+![Step 20 - Admin Views Pending Request](screenshots/2026-05-23_22-13_1.png)
 
 ---
 
-### Step 22 — Admin Reviewed and Approved the Request
+### Step 21 — Admin Reviewed and Approved the Request
 
 The **Approve Request** panel opened on the right, showing full details of the request including the requestor's justification. I reviewed the request details and entered the approval justification:
 
@@ -303,15 +289,29 @@ The **Approve Request** panel opened on the right, showing full details of the r
 
 I clicked **Confirm** to approve the request.
 
-![Step 22 - Admin Approves Request](screenshots/2026-05-23_22-14.png)
+![Step 21 - Admin Approves Request](screenshots/2026-05-23_22-14.png)
 
 ---
 
-### Step 23 — ✅ Approval Confirmed
+### Step 22 — ✅ Approval Confirmed
 
 The approval was processed immediately. A green success banner appeared at the top right: **"Update request status — kate ALL is approved."** The Requests for role activations table cleared to "No requests pending approval," confirming the activation had been granted. Phase 4 was complete.
 
-![Step 23 - Approval Confirmed](screenshots/2026-05-23_22-14_1.png)
+![Step 22 - Approval Confirmed](screenshots/2026-05-23_22-14_1.png)
+
+---
+
+### Step 23 — Admin Received Approval Confirmation Email
+
+Immediately after approving in the portal, Microsoft Security automatically sent a confirmation email to Kingsley — subject **"PIM: The request from kate ALL to activate the Global Administrator role was approved"**. The email confirmed:
+
+| Field | Value |
+|---|---|
+| Reviewed by | Kingsley |
+
+This closure notification ensures the approver has a permanent record of the decision in their mailbox, supporting audit trail requirements and giving both the approver and requestor full visibility of the outcome without needing to revisit the portal.
+
+![Step 23 - Approval Confirmation Email in Outlook](screenshots/2026-05-24_13-44.png)
 
 ---
 
