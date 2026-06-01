@@ -1,7 +1,7 @@
 # 🛡️ Privileged Identity Management (PIM) — Just-In-Time Access Control
 
 **Platform:** Microsoft Entra ID (Azure AD)  
-**Organization:** @tenantname  
+**Organization:** Cupetence Technologies DEV  
 **Author:** Kingsley  
 **Date:** May 23, 2026  
 
@@ -134,7 +134,7 @@ I navigated to the **Notification** tab to review the email alert configuration.
 
 ### Step 8 — Searched for Member to Assign
 
-I clicked **+ Add assignments** and searched for `KATE` in the member search panel. The search returned 1 result — **kate ALL** (`Kateall@tenantname`) — who was the same test user from the MFA Conditional Access lab. I selected her as the eligible assignee and clicked **Select**.
+I clicked **+ Add assignments** and searched for `KATE` in the member search panel. The search returned 1 result — **kate ALL** (`KateallCupetence Technologies DEV`) — who was the same test user from the MFA Conditional Access lab. I selected her as the eligible assignee and clicked **Select**.
 
 ![Step 8 - Search and Select Member](screenshots/2026-05-23_21-48.png)
 
@@ -185,7 +185,7 @@ Kate ALL's time-bound eligible assignment was confirmed and active. Phase 3 was 
 
 ### Step 12 — Signed In as the Test User
 
-I opened a new browser session and navigated to the Microsoft sign-in page. The **Pick an account** screen appeared with `Kateall@tenantname` as a cached account. I selected it to sign in as the test user and verify the JIT activation flow from the end-user perspective.
+I opened a new browser session and navigated to the Microsoft sign-in page. The **Pick an account** screen appeared with `KateallCupetence Technologies DEV` as a cached account. I selected it to sign in as the test user and verify the JIT activation flow from the end-user perspective.
 
 ![Step 12 - Pick Account](screenshots/2026-05-23_21-56.png)
 
@@ -240,7 +240,7 @@ I clicked **Activate** to submit the request. Since approval was required, the r
 
 ### Step 18 — Request Confirmed as Pending Approval
 
-After submitting, the My roles page displayed a notification banner: **"Your request is pending for approval"** — Scope: @tenantname Member: kate ALL, Role: Global Administrator. This confirmed the request had been submitted and was awaiting approval from one of the 6 designated approvers.
+After submitting, the My roles page displayed a notification banner: **"Your request is pending for approval"** — Scope: Cupetence Technologies DEV Member: kate ALL, Role: Global Administrator. This confirmed the request had been submitted and was awaiting approval from one of the 6 designated approvers.
 
 ![Step 18 - Pending Approval Notification](screenshots/2026-05-23_22-13.png)
 
@@ -323,7 +323,7 @@ I switched back to the kate ALL browser session and refreshed the My roles page.
 
 | Field | Value |
 |---|---|
-| Scope | @tenantname |
+| Scope | Cupetence Technologies DEV |
 | Membership | Direct |
 | State | **Activated** |
 | End time | 5/24/2026, 12:14:36 AM |
@@ -447,3 +447,4 @@ In this lab, I successfully implemented a complete Just-In-Time access control f
 ![Microsoft 365](https://img.shields.io/badge/Microsoft%20365-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 ![Zero Trust](https://img.shields.io/badge/Zero%20Trust-Security-00A86B?style=for-the-badge&logo=microsoft&logoColor=white)
+
